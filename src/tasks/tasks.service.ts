@@ -4,11 +4,14 @@ import {v4 as uuidv4} from 'uuid';
 
 @Injectable()
 export class TasksService {
-    private tasks: Task[] = [];
+    private tasks: Task[] = [{  id: "1",
+      title: "name",
+      description: "dkdkd",
+      status: TaskStatus.DONE}];
 
     getAllTasks(): Task[] {
-      this.tasks;
-    }
+      return this.tasks;
+   }
 
     createTask(title: string, description: string): Task {
       const task: Task = {

@@ -7,9 +7,9 @@ export class TasksController {
     constructor(private tasksService: TasksService) {
 
     }
-    @Get()   
-    getTasks() {
-      return this.tasksService.getAllTasks()
+    @Get()
+    getAllTasks(): Task[] {
+      return this.tasksService.getAllTasks();
     }
     @Post()
     createTask(@Body('title') title: string, @Body('description') description: string) : Task {
@@ -21,5 +21,5 @@ export class TasksController {
         return this.tasksService.getTaskByid(id)
     }
 
-    
+
 }
